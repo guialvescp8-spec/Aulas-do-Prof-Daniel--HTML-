@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>Programação da interface (aula 11)</div>
+    <script type="text/javascript">
+        var hoje = new Date();
+        var fimANO = new Date(2017, 11, 31, 23, 59, 59, 999);
+        //Determina o ultimo segundo do ano
+
+
+        var segundosRestante = (fimANO.getTime() - hoje.getTime()) / 1000;
+        //Milisegundos
+        var diasRestantes = (segundosRestante / 60) / 60 / 24;
+
+        document.write("<br> " + hoje);
+        document.write("<br> " + fimANO);
+        document.write("<br> Segundos: " + Math.floor(segundosRestante));
+        document.write("<br> Dias: " + Math.floor(diasRestantes)); 
+    </script>
+
+</body>
+
+</html>
