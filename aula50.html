@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Primeira Linha.</p>
+    <p>Segunda Linha.</p>
+    <p>Terceira Linha.</p>
+    <p>Quarta Linha.</p>
+
+    <div>
+        Elemento DIV
+        <br>Primeira Linha.
+        <br>Segunda Linha.
+        <br>Terceira Linha.
+        <br>Quarta Linha.
+
+    </div>
+
+    <p>Quinta linha de paragrafo.</p>
+
+    <button onclick="alterar()">Clique para alterar o p</button>
+
+    <button onclick="alterarDIV()">Clique para alterar a div</button>
+
+    <script>
+       function alterar(){
+        document.querySelector("p").style.backgroundColor = "green";
+        }
+
+        function alterarDIV() {
+            document.querySelector("div").style.backgroundColor = "gray";
+
+        }
+    </script>
+
+</body>
+
+</html>

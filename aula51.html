@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Primeira Linha.</p>
+    <p>Segunda Linha.</p>
+    <p>Terceira Linha.</p>
+    <p>Quarta Linha.</p>
+
+    <div>
+        Elemento DIV
+        <br>Primeira Linha.
+        <br>Segunda Linha.
+        <br>Terceira Linha.
+        <br>Quarta Linha.
+
+    </div>
+
+    <button onclick="alterar()">Clique / alterar o (p)</button>
+    <button onclick="alterarDIV()">Clique / alterar o (div)</button>
+    <button onclick="alterar()">Clique / alterar linhas (p)</button>
+    <button onclick="limparTodas()">Clique limpar linhas (p)</button>
+
+    <script>
+        function limparTodas() {
+            var x = document.querySelectorAll("p");
+            for (var i = 0; x.length; i++) {
+                x[i].style.backgroundColor = "green";
+            }
+        }
+
+        function alterar(){
+            var x = document.querySelectorAll("p");
+            for (var i = 0; x.length; i++){
+                x[i].style.backgroundColor = "green";
+            }
+        }
+
+        function alterarDIV(){
+            document.querySelector("div").style.backgroundColor = "gray";
+        }
+
+        function alterar(){
+            var x = document.querySelectorAll("p");
+            for(var i = 0; x.length; i++){
+                if (i % 2 == 0)
+                    x[i].style.backgroundColor = "green";
+                else
+                    x[i].style.backgroundColor = "blue"; 
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>

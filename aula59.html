@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Video 01 explicativo: <a href="https://www.youtube.com/watch?v=sPQSGPrA0m4" target="_blank">Video 1</a> </p>
+    <p>Video 02 explicativo: <a href="https://www.youtube.com/watch?v=1_oxcJSUrRA" target="_blank">Video 2</a> </p>
+    <p>Video 01 explicativo: <a href="https://www.youtube.com/watch?v=c45RLJ7qgoA" target="_blank">Video 3</a> </p>
+    <script>
+        //Classe
+        function Carro(a, b, c, d) {
+            this.cor = a;
+            this.ano = b;
+            this.portas = c;
+            this.modelo = d;
+            this.velociadadeAtual = 0;
+            this.ligado = false;
+
+        }
+
+        //Metodo3
+        Carro.prototype.passear = function () {
+            this.ligado = true;
+            this.velocidadeAtual = 50;
+            return this.velociadadeAtual;
+        }
+
+        //Metodo
+        Carro.prototype.estacionar = function () {
+            this.velociadadeAtual = 0;
+        }
+
+        //Metodo
+        Carro.prototype.estacionar = function () {
+            this.parar();
+            this.ligado = false;
+        }
+
+        //Metodo
+        Carro.prototype.acelerar = function () {
+            this.velocidadeAtual += 10;
+        }
+
+        //Metodo
+        Carro.prototype.informacao = function () {
+            if (this.ligado)
+                var motorLigado = 'ligado';
+            else
+                var motorLigado = 'desligado';
+
+            return 'Velocidade Atual= ' +this.velocidadeAtual + ' km/h ' + ' o meu ' + this.modelo + '' + this.cor + ' está ' + motorLigado + '. '; 
+        }
+
+        //intanciar objeto
+        var veiculo1 = new Carro('preto', 2017, 5, 'SUV');
+
+        //Exibir
+        console.log(veiculo1.informacao());
+        veiculo1.passear();
+
+        console.log(veiculo1.informacao());
+        veiculo1.parar();
+        console.log(veiculo1.informacao());
+        veiculo1.passear();
+        console.log(veiculo1.informacao());
+        veiculo1.estacionar();
+        console.log(veiculo1.informacao());
+        veiculo1.passear();
+        veiculo1.acelerar();
+        veiculo1.acelerar();
+        console.log(veiculo1.informacao());
+    </script>
+
+</body>
+
+</html>

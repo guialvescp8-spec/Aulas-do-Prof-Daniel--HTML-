@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <p>Video 01 explicativo: <a href="https://www.youtube.com/watch?v=YEm5aayBn8g" target="_blank" >Video 1</a> </p>
+    <p>Video 02 explicativo: <a href="https://www.youtube.com/watch?v=swdouMYu62U" target="_blank" >Video 2</a> </p>
+    <p>Video 03 explicativo: <a href="https://www.youtube.com/watch?v=MURr7XdfXHw" target="_blank" >Video 3</a> </p>
+
+    <script>
+        // Classe pai (Superclasse)
+        function Pessoa(a, b){
+            this.nome = a;
+            this.idade = b;
+        }
+
+        //Classe filho (Subclasse)
+        function Funcionario(a, b, c, d){
+            Pessoa.call(this, a, b);
+            this.matricula = c;
+            this.setor = d;
+        }
+
+        //Herança
+        //Pessoa => Aluno
+        Aluno.prototype = new Pessoa.prototype.constructor();
+        Aluno.prototype.constructor = Aluno;
+        //Opção para criar a Herança = Aluno.prototype = Object.create(Pessoas.prototype);
+        Funcionario.prototype = new Pessoa.prototype.constructor();
+        Funcionario.prototype.constructor = Funcionario;
+
+
+        //Metodos
+        //Metodos acessores
+        Pessoa.prototype.getNome = function(){
+            return this.nome;
+        }
+        Pessoa.prototype.getIdade = function(){
+            return this.idade;
+        }
+
+        //Metodos modificadores
+        Pessoa.prototype.setNome = function(x){
+            this.nome = x;
+        }
+        Pessoa.prototype.setIdade = function(x){
+            this.idade = x;
+        }
+
+        // Metodo exibir
+        Pessoa.prototype.exibirDados = function(){
+            return 'Nome = ' + this.getNome() + ', idade = ' + this.getIdade() + ' anos';
+        }
+
+        //Polimorfismo do metodo exibirDados
+        Aluno.prototype.exibirDados = function(){
+            return Pessoa.prototype.exibirDados.call(this) +', RA =' + this.ra + ', curso = ' + this.curso + '.';
+        }
+
+        //Polimorfismo do metodo de exibirDados
+        Funcionario.prototype.exibirDados = function(){
+            return Pessoa.prototype.exibirDados.call(this) +', Matricula = ' + this.matricula + ' , Setor = ' + this.setor + '.';
+        }
+
+        //Instanciar objetos
+        var p1 = new Pessoa('João da Silva', 20);
+        var p1 = new Aluno('Pedro ', 19, '123456','Ciência de Computação');
+        var p1 = new Aluno('Maria da Graça', 34, '456123', 'Tec. em Sistemas para Internet');
+        var p1 = new Funcionario('Gustavo Lira', 26, '123', 'Secretario');
+        var p1 = new Funcionario('Roberto kall', 60, '203', 'TI');
+
+        //Exibir
+        console.log(p1.exibirDados());
+        console.log(p2.exibirDados());
+        console.log(p3.exibirDados());
+        console.log(p4.exibirDados());
+        console.log(p5.exibirDados());
+
+        //Alterações
+        p1.setIdade(21);
+        p1.setNome('Pedro Antonio');
+        p1.setIdade(45);
+
+        //Array de objetos
+        var universidade = [p1, p2, p3, p4, p5];
+
+        //reexibir loop
+        console.log('n\************************************')
+        for(cadaPessoa of universidade){
+            console.log(cadaPessoa.exibirDados());
+        }
+
+        //Procurar o aluno mais velho da universidade
+        var maiorIdade = 0; var cadaPessoa;
+        for(cadaPessoa of universidade){
+            if((cadaPessoa.getIdade() > maiorIdade) && (String(cadaPessoa.constructor.name) == "Aluno") ){
+                maiorIdade = cadaPessoa.getIdade();
+                var idPessoa = cadaPessoa;
+            }
+        }
+
+        console.log('\nO aluno mais velho é o' + idPessoa.getNome() + ', tem ' + idPessoa.getIdade() + 'anos!');
+    </script>
+
+    
+</body>
+</html>
