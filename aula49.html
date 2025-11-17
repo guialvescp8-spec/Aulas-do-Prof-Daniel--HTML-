@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Selecione um novo treinamento a realiza.</p>
+
+    <select id="curso" onchange="alternarCurso()">
+        <option value="Java">Java
+        <option value="C#">C#
+        <option value="Linguagem C">Linguagem C
+        <option value="JavaScript">JavaScript
+    </select>
+
+    <p>Esperamos poder participar de mais um treinamento!</p>
+    <p id="texto"></p>
+
+    <script>
+        function alternarCurso(){
+            var x = document.getElementById("curso").value;
+            document.getElementById("texto").innerHTML = "Escolha: " + x; 
+        }
+    </script>
+    
+</body>
+</html>

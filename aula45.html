@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+        var magica = false;
+        function alternar_Bau(x){
+            var img_bau;
+            if (x == 1 && magica == false)
+                img_bau = "bau_aberto.png";
+            else
+               if (x == 2 && magica == false)
+                   img_bau = "bau_fechado.png"
+                else{
+                    img_bau = "";
+                    magica = true;
+                }
+            document.getElementById("bau").src = img_bau;
+        }
+    </script>
+  <img src="bau_fechado.png" id="bau" onmouseover="alternar_Bau(1)" onmouseout="alternar_Bau(2)" onclick="alternar_Bau(0)">  
+    
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+        function alternar_Bau(x){
+            var img_bau;
+            if ( x == 1)
+                img_bau = "bau_aberto.png";
+            else
+                img_bau = "bau_fechado.png";
+            
+            document.getElementById("bau").src = img_bau;    
+        }
+    </script>
+    <img src="bau_fechado.png" id="bau" onmouseover="alternar_Bau(1)" onmouseout="alternar_Bau(2)"
+    
+</body>
+</html>

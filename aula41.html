@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>Programação de interface (aula 11)</div>
+    <script>
+        var valor = "Objeto String";
+        document.write("<br> " + valor.length);
+
+        var valor = "Objeto \"String\"";
+        document.write("<br> " + valor);
+
+        var valor = "Objeto \"String\" - Programação de interfaces com String";
+
+        document.write("<br> " + valor.toLowerCase());
+        document.write("<br> " + valor.toUpperCase());
+        document.write("<br> " + valor.indexOf("String"));
+        document.write("<br> " + valor.lastIndexOf("String"));
+        document.write("<br> " + valor.search("String"));
+        document.write("<br> " + valor.slice(8,14));
+        document.write("<br> " + valor.replace("String", "DATE"));
+        document.write("<br> " + valor.replace(/String/g, "DATE"));
+    </script>
+    
+</body>
+</html>
